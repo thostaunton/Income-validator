@@ -1,3 +1,5 @@
+package Application;
+
 public class RegularAmount {
     private Frequency frequency;
     private String amount;

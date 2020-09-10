@@ -1,3 +1,5 @@
+package Application;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import javax.validation.ReportAsSingleViolation;
@@ -15,7 +17,7 @@ import static java.lang.annotation.ElementType.*;
 @ReportAsSingleViolation
 public @interface ValidIncome {
 
-    String message() default "{javax.validation.constraints.RequiredProperty.message}";
+    String message() default "Invalid Income";
 
     Class<?>[] groups() default {};
 
