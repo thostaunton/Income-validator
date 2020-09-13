@@ -26,7 +26,9 @@ public class IncomeConstraintValidator implements ConstraintValidator<ValidIncom
                 break;
 
         }
-        if(String.valueOf(result).indexOf(".") >= 0 && String.valueOf(result).indexOf(".") < String.valueOf(result).length() - 2){
+        String paymentPerInterval = String.valueOf(result);
+        if(paymentPerInterval.length() <= paymentPerInterval.indexOf(".") + 2){
+            // If the length of the paymentPerInterval is more than two indexes after the decimal point (longer than 0.00)
             return true;
         }else {
             return false;

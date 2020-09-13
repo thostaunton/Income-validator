@@ -1,8 +1,8 @@
 package Application.Controllers;
 
 import Application.Citizen;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -10,7 +10,11 @@ import javax.validation.Valid;
 public class Controller {
 
     @PostMapping("/validateCitizen")
-    public String submitCitizen(@Valid Citizen citizen) {
+
+    @ResponseBody
+    @RequestMapping(value = "/validateCitizen", headers = {
+            "content-type=application/json" }, consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    public String submitCitizen(@Valid @RequestBody Citizen citizen) {
 
         return citizen.toString();
     }

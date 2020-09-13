@@ -8,12 +8,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.ElementType.FIELD;
 
 @Documented
 @Constraint(validatedBy = IncomeConstraintValidator.class)
 @Retention(RetentionPolicy.RUNTIME)
-@Target({FIELD, METHOD, PARAMETER, ANNOTATION_TYPE, TYPE_USE})
+@Target({FIELD})
 @ReportAsSingleViolation
 public @interface ValidIncome {
 
