@@ -1,1 +1,1 @@
-A Java Spring project that uses a spring annotation to validate a citizen's income 
+A Java project that uses a Spring annotation to validate a citizen's income 
